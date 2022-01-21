@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {TaskTodo} from "../interfaces/modal";
 
 @Component({
   selector: 'app-view-tasks',
@@ -7,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ViewTasksComponent implements OnInit {
 
-  @Input() tasks: string[] = []; //dane od rodzica
+  @Input() tasks: TaskTodo[] = []; //dane od rodzica
 
   constructor() {
   }

@@ -1,5 +1,6 @@
 <p>ZADANIA</p>
 <tr *ngFor="let task of tasks; let i = index">
   <td>{{i + 1}}.</td>
-  <td>{{task}}</td>
+  <td>{{task.todo}}</td>
+  <td>{{task.todoData}}</td>
 </tr>

@@ -1,9 +1,16 @@
 <div>
   <p class="view-topic">
-    Dodaj zadaniem {{title}}
+    Dodaj zadanie
   </p>
 
-  <mat-form-field class="example-form-field" appearance="fill">
+  <mat-form-field appearance="fill"> <!--kalendarz-->
+    <mat-label>Wybierz date</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="dateChose">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="example-form-field" appearance="fill"> <!--pole do wpisywania zadan-->
     <mat-label>Nowe zadanie</mat-label>
     <input matInput type="text" [(ngModel)]="value">
     <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">

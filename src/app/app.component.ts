@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {TaskTodo} from "./interfaces/modal";
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,11 @@ import {Component} from '@angular/core';
 export class AppComponent {
 
   title = 'TO DO List';
-  tasks: string[] = []; //zadeklarowalismy ze tablica bedzie pusta
+  tasks: TaskTodo[] = []; //zadeklarowalismy ze tablica bedzie pusta
 
-  addItem(event: string) {
-    console.log('addItem logi eventu co dostalismy ' + event);//logi
-    this.tasks.push(event);//dodalismy jeden element do tablicy
+  addTask(task: TaskTodo) {
+    console.log('addItem logi eventu co dostalismy ' + task);//logi
+    this.tasks.push(task);//dodalismy jeden element do tablicy
     console.log('nasza tablica z taskami ', this.tasks);//logi tablicy (musi byc po przycinku)
   }
 

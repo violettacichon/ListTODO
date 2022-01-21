@@ -1,4 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {TaskTodo} from "../interfaces/modal";
 
 @Component({
   selector: 'app-add-task',
@@ -7,10 +8,11 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class AddTaskComponent implements OnInit {
 
-  @Input() title = ''; //dane od rodzica
-  @Output() newItemEvent = new EventEmitter<string>(); //dane ktore chcemy przekazac do rodzica
+  //@Input() title = ''; //dane od rodzica
+  @Output() sendTask = new EventEmitter<TaskTodo>(); //dane ktore chcemy przekazac do rodzica
 
   value = '';
+  dateChose = new Date();
 
   constructor() {
   }
@@ -21,7 +23,8 @@ export class AddTaskComponent implements OnInit {
 
   addClick() {
     console.log('działa ' + this.value);//logi
-    this.newItemEvent.emit(this.value);//nasz wyzej stworzony emiter wysyla nasza podana wartosc
+    console.log('działa data ' + this.dateChose);//logi
+    this.sendTask.emit({todo: this.value, todoData: this.dateChose});//nasz wyzej stworzony emiter wysyla nasza podana wartosc
     this.value = '';
   }
 
