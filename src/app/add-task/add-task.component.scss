@@ -1,0 +1,26 @@
+.example-form-field {
+  width: 200px;
+  max-height: 25px;
+  margin-left: 10px;
+}
+
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+
+.view-topic {
+  font-size: 20px;
+  margin: 10px;
+}
