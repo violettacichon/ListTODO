@@ -1,2 +1,5 @@
-<app-add-task></app-add-task>
-<app-view-tasks></app-view-tasks>
+<app-add-task
+  [title]="title"
+  (newItemEvent)="addItem($event)">
+</app-add-task>
+<app-view-tasks [tasks]="tasks"></app-view-tasks>

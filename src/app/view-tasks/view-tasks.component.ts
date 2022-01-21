@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-view-tasks',
@@ -7,10 +7,13 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ViewTasksComponent implements OnInit {
 
+  @Input() tasks: string[] = []; //dane od rodzica
+
   constructor() {
   }
 
   ngOnInit(): void {
+    console.log('tasks ', this.tasks);
   }
 
 }

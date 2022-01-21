@@ -1,1 +1,5 @@
-<p>view-tasks works!</p>
+<p>ZADANIA</p>
+<tr *ngFor="let task of tasks; let i = index">
+  <td>{{i + 1}}.</td>
+  <td>{{task}}</td>
+</tr>
