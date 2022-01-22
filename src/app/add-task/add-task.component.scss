@@ -24,3 +24,7 @@ section {
   font-size: 20px;
   margin: 10px;
 }
+
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
