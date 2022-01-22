@@ -2,7 +2,7 @@
 <tr *ngFor="let task of tasks; let i = index">
   <td class="space-input">--{{i + 1}}--</td>
   <button matSuffix mat-icon-button aria-label="Clear" (click)="done(i)" *ngIf="!status[i]">
-    Wykonaj
+    Wykonaj akcje
   </button>
   <td class="space-input" *ngIf="task.todo">Treść: {{task.todo}}</td>
   <td class="space-input" *ngIf="task.todoData">Data zadania to: {{task.todoData | date: 'dd/MM/yyyy'}}</td>
