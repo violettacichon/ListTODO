@@ -25,7 +25,7 @@ export class AddTaskComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log('uruchomilo');
+    console.log('uruchomilo sie');
     this.taskTodo?.get('selected')?.valueChanges.subscribe(value => {
       console.log('selected ', value);
       if (value === 'pilny') {
@@ -37,7 +37,7 @@ export class AddTaskComponent implements OnInit, OnDestroy {
     this.taskTodo?.get('checkbox')?.valueChanges.subscribe(value => {
       console.log('checkbox ', value);
       if (value === true) {
-        console.log('weszlo');
+        console.log('udalo sie');
         this.taskTodo?.addControl('attention', new FormControl(''));
       } else {
         this.taskTodo?.removeControl('attention');

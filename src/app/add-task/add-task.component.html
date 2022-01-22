@@ -30,7 +30,7 @@
 
     <mat-form-field appearance="fill" style="margin-left: 10px"
                     *ngIf="taskTodo?.get('selected')?.value === 'pilny' && taskTodo?.get('person')">
-      <mat-label>Toppings</mat-label>
+      <mat-label>Przypisz do</mat-label>
       <mat-select formControlName="person" multiple>
         <mat-option *ngFor="let person of personList" [value]="person">{{person}}</mat-option>
       </mat-select>
@@ -52,6 +52,6 @@
   </form>
   <div style="margin: 20px">
     <button mat-raised-button color="primary" style="margin-left: 10px" (click)="addClick()">Dodaj
-      zadania {{taskTodo?.get('todo')?.value}}</button>
+      zadanie {{taskTodo?.get('todo')?.value}}</button>
   </div>
 </div>
