@@ -25,7 +25,7 @@ export class AddTaskComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log('uruchomilo');
+    console.log('uruchomilo sie');
     this.taskTodo?.get('selected')?.valueChanges.subscribe(value => {
       console.log('selected ', value);
       if (value === 'pilny') {
