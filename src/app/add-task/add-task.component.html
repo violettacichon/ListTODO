@@ -37,7 +37,8 @@
     </mat-form-field>
 
     <section class="example-section" style="margin-left: 10px">
-      <mat-checkbox class="example-margin" style="margin-left: 10px" formControlName="checkbox">Obowiązkowo
+      <mat-checkbox class="example-margin" style="margin-left: 10px" formControlName="checkbox">
+        Czy masz dodatkowe uwagi?
       </mat-checkbox>
       <mat-option *ngIf="taskTodo?.get('checkbox')?.value === 'true' && taskTodo?.get('attention')"></mat-option>
     </section>
