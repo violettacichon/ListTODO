@@ -25,7 +25,7 @@ export class AddTaskComponent implements OnInit {
   addClick() {
     console.log('działa ' + this.value);//logi
     console.log('działa data ' + this.dateChose);//logi
-    this.sendTask.emit({todo: this.value, todoData: this.dateChose});//nasz wyzej stworzony emiter wysyla nasza podana wartosc
+    this.sendTask.emit({todo: this.value, todoData: this.dateChose, selected: this.selected});//nasz wyzej stworzony emiter wysyla nasza podana wartosc
     this.value = '';
   }
 
