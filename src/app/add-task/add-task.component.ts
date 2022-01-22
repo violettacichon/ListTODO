@@ -16,6 +16,7 @@ export class AddTaskComponent implements OnInit {
   selected = '';
   personChose = [];
   personList: string[] = ['Kasia', 'Marek', 'Ania', 'Tomek', 'Basia', 'Michał'];
+  checkbox: boolean = false;
 
   constructor() {
   }
@@ -28,7 +29,7 @@ export class AddTaskComponent implements OnInit {
   addClick() {
     console.log('działa ' + this.value);//logi
     console.log('działa data ' + this.dateChose);//logi
-    this.sendTask.emit({todo: this.value, todoData: this.dateChose, selected: this.selected, person: this.personChose});//nasz wyzej stworzony emiter wysyla nasza podana wartosc
+    this.sendTask.emit({todo: this.value, todoData: this.dateChose, selected: this.selected, person: this.personChose, checkbox: this.checkbox});//nasz wyzej stworzony emiter wysyla nasza podana wartosc
     this.value = '';
   }
 

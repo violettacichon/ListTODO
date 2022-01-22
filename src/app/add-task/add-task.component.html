@@ -25,7 +25,6 @@
       <mat-option value="Sredni">Średni</mat-option>
       <mat-option value="Malo wazne">Mało ważny</mat-option>
     </mat-select>
-    <mat-hint>Priorytet</mat-hint>
   </mat-form-field>
 
   <mat-form-field appearance="fill" style="margin-left: 10px">
@@ -34,6 +33,10 @@
       <mat-option *ngFor="let person of personList" [value]="person">{{person}}</mat-option>
     </mat-select>
   </mat-form-field>
+
+  <section class="example-section" style="margin-left: 10px">
+    <mat-checkbox class="example-margin" style="margin-left: 10px" [(ngModel)]="checkbox">Obowiązkowo</mat-checkbox>
+  </section>
 
   <button mat-raised-button color="primary" style="margin-left: 10px" (click)="addClick()">Dodaj</button>
 </div>

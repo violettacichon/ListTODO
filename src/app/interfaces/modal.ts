@@ -3,4 +3,5 @@ export interface TaskTodo {
   todoData: Date;
   selected: string;
   person: string[];
+  checkbox: boolean;
 }
