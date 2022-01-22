@@ -13,6 +13,7 @@ export class AddTaskComponent implements OnInit {
 
   value = '';
   dateChose = new Date();
+  selected = '';
 
   constructor() {
   }
