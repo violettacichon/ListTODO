@@ -14,6 +14,8 @@ export class AddTaskComponent implements OnInit {
   value = '';
   dateChose = new Date();
   selected = '';
+  personChose = [];
+  personList: string[] = ['Kasia', 'Marek', 'Ania', 'Tomek', 'Basia', 'Michał'];
 
   constructor() {
   }
@@ -22,10 +24,11 @@ export class AddTaskComponent implements OnInit {
     console.log('uruchomilo');
   }
 
+
   addClick() {
     console.log('działa ' + this.value);//logi
     console.log('działa data ' + this.dateChose);//logi
-    this.sendTask.emit({todo: this.value, todoData: this.dateChose, selected: this.selected});//nasz wyzej stworzony emiter wysyla nasza podana wartosc
+    this.sendTask.emit({todo: this.value, todoData: this.dateChose, selected: this.selected, person: this.personChose});//nasz wyzej stworzony emiter wysyla nasza podana wartosc
     this.value = '';
   }
 
