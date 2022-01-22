@@ -14,9 +14,9 @@
     <mat-form-field class="example-form-field" appearance="fill"> <!--pole do wpisywania zadan-->
       <mat-label>Nowe zadanie</mat-label>
       <input matInput type="text" formControlName="todo">
-      <!--      <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-              <mat-icon>close</mat-icon>
-            </button>-->
+      <button *ngIf="taskTodo?.get('todo')?.value" matSuffix mat-icon-button aria-label="Clear" (click)="taskTodo?.get('todo')?.setValue('')">
+        <mat-icon>close</mat-icon>
+      </button>
     </mat-form-field>
 
     <mat-form-field appearance="fill" style="margin-left: 10px">

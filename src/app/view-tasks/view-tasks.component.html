@@ -1,10 +1,14 @@
 <p *ngIf="tasks && (tasks!.length > 0)">ZADANIA</p>
 <tr *ngFor="let task of tasks; let i = index">
   <td class="space-input">--{{i + 1}}--</td>
+  <button matSuffix mat-icon-button aria-label="Clear" (click)="done(i)" *ngIf="!status[i]">
+    Wykonaj
+  </button>
   <td class="space-input" *ngIf="task.todo">Treść: {{task.todo}}</td>
   <td class="space-input" *ngIf="task.todoData">Data zadania to: {{task.todoData | date: 'dd/MM/yyyy'}}</td>
   <td class="space-input" *ngIf="task.selected">
     Prioryted: {{task.selected === 'pilne' ? 'Pilne' : task.selected === 'sredni' ? 'Średni' : 'Mało ważny'}} </td>
   <td class="space-input" *ngIf="task.person">Dla: {{task.person}}</td>
   <td class="space-input" *ngIf="task.attention">Uwagi: {{task.attention}}</td>
+  <td class="space-input" style="color: green" *ngIf="status[i]">{{status[i]}}</td>
 </tr>

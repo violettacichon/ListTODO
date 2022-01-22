@@ -9,6 +9,7 @@ import {TaskTodo} from "../interfaces/modal";
 export class ViewTasksComponent implements OnInit {
 
   @Input() tasks: TaskTodo[] = []; //dane od rodzica
+  status: string[] = [];
 
   constructor() {
   }
@@ -17,4 +18,7 @@ export class ViewTasksComponent implements OnInit {
     console.log('tasks ', this.tasks);
   }
 
+  done(index: number) {
+    this.status[index] = 'zadanie wykonane';
+  }
 }
