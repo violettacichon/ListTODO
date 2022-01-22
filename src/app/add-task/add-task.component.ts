@@ -34,6 +34,15 @@ export class AddTaskComponent implements OnInit, OnDestroy {
         this.taskTodo?.removeControl('person');
       }
     });
+    this.taskTodo?.get('checkbox')?.valueChanges.subscribe(value => {
+      console.log('checkbox ', value);
+      if (value === true) {
+        console.log('weszlo');
+        this.taskTodo?.addControl('attention', new FormControl(''));
+      } else {
+        this.taskTodo?.removeControl('attention');
+      }
+    });
   }
 
   addClick() {

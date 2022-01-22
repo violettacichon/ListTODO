@@ -4,4 +4,5 @@ export interface TaskTodo {
   selected: string;
   person: string[];
   checkbox: boolean;
+  attention: string;
 }
