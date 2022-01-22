@@ -13,6 +13,7 @@ export class AddTaskComponent implements OnInit {
   @Output() sendTask = new EventEmitter<TaskTodo>(); //dane ktore chcemy przekazac do rodzica
 
   taskTodo: FormGroup;
+  personList: string[] = ['Kasia', 'Marek', 'Ania', 'Tomek', 'Basia', 'Michał'];
 
   constructor(fb: FormBuilder) {
     this.taskTodo = fb.group({
