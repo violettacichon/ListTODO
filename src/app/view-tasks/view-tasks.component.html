@@ -1,9 +1,9 @@
 <p>ZADANIA</p>
 <tr *ngFor="let task of tasks; let i = index">
-  <td>{{i + 1}}.</td>
-  <td>{{task.todo}}</td>
-  <td>{{task.todoData | date: 'dd/MM/yyyy'}}</td>
-  <td>{{task.selected}} </td>
-  <td>{{task.person}}</td>
-  <td>{{task.checkbox === true ? 'obowiązkowo' : ''}}</td>
+  <td class="space-input">{{i + 1}}.</td>
+  <td class="space-input">{{task.todo}}</td>
+  <td class="space-input">{{task.todoData | date: 'dd/MM/yyyy'}}</td>
+  <td class="space-input">{{task.selected}} </td>
+  <td class="space-input">{{task.person}}</td>
+  <td class="space-input">{{task.checkbox === true ? 'obowiązkowo' : ''}}</td>
 </tr>
