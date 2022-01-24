@@ -8,7 +8,7 @@ import {TaskTodo} from "../interfaces/modal";
 })
 export class ViewTasksComponent implements OnInit {
 
-  @Input() tasks: TaskTodo[] = []; //dane od rodzica
+  @Input() tasks: TaskTodo[] = [];
   status: string[] = [];
 
   constructor() {

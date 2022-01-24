@@ -9,12 +9,12 @@ import {TaskTodo} from "./interfaces/modal";
 export class AppComponent {
 
   title = 'TO DO List';
-  tasks: TaskTodo[] = []; //zadeklarowalismy ze tablica bedzie pusta
+  tasks: TaskTodo[] = [];
 
   addTask(task: TaskTodo) {
-    console.log('addItem logi eventu co dostalismy ' + task);//logi
-    this.tasks.push(task);//dodalismy jeden element do tablicy
-    console.log('nasza tablica z taskami ', this.tasks);//logi tablicy (musi byc po przycinku)
+    console.log('addItem logi eventu ktore dostalismy' + task);
+    this.tasks.push(task);
+    console.log('nasza tablica z dodanymi elementami ', this.tasks);
   }
 
 }

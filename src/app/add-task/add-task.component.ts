@@ -9,8 +9,7 @@ import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 })
 export class AddTaskComponent implements OnInit, OnDestroy {
 
-  //@Input() title = ''; //dane od rodzica
-  @Output() sendTask = new EventEmitter<TaskTodo>(); //dane ktore chcemy przekazac do rodzica
+  @Output() sendTask = new EventEmitter<TaskTodo>();
 
   taskTodo: FormGroup;
   personList: string[] = ['Kasia', 'Marek', 'Ania', 'Tomek', 'Basia', 'Michał'];
@@ -37,7 +36,7 @@ export class AddTaskComponent implements OnInit, OnDestroy {
     this.taskTodo?.get('checkbox')?.valueChanges.subscribe(value => {
       console.log('checkbox ', value);
       if (value === true) {
-        console.log('weszlo');
+        console.log('checkbox on');
         this.taskTodo?.addControl('attention', new FormControl(''));
       } else {
         this.taskTodo?.removeControl('attention');
@@ -47,7 +46,8 @@ export class AddTaskComponent implements OnInit, OnDestroy {
 
   addClick() {
     console.log('this.taskTodo?.value ', this.taskTodo?.value);
-    this.sendTask.emit(this.taskTodo?.value);//nasz wyzej stworzony emiter wysyla nasza podana wartosc
+    this.sendTask.emit(this.taskTodo?.value);
+    this.taskTodo?.reset();
   }
 
   ngOnDestroy(): void {

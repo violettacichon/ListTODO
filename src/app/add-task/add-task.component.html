@@ -4,14 +4,15 @@
   </p>
 
   <form class="example-container" [formGroup]="taskTodo">
-    <mat-form-field appearance="fill"> <!--kalendarz-->
+
+    <mat-form-field appearance="fill">
       <mat-label>Wybierz date</mat-label>
       <input matInput [matDatepicker]="picker" formControlName="todoData">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
-    <mat-form-field class="example-form-field" appearance="fill"> <!--pole do wpisywania zadan-->
+    <mat-form-field class="example-form-field" appearance="fill">
       <mat-label>Nowe zadanie</mat-label>
       <input matInput type="text" formControlName="todo">
       <button *ngIf="taskTodo?.get('todo')?.value" matSuffix mat-icon-button aria-label="Clear" (click)="taskTodo?.get('todo')?.setValue('')">
@@ -30,7 +31,7 @@
 
     <mat-form-field appearance="fill" style="margin-left: 10px"
                     *ngIf="taskTodo?.get('selected')?.value === 'pilny' && taskTodo?.get('person')">
-      <mat-label>Toppings</mat-label>
+      <mat-label>Przypisz do</mat-label>
       <mat-select formControlName="person" multiple>
         <mat-option *ngFor="let person of personList" [value]="person">{{person}}</mat-option>
       </mat-select>
@@ -40,18 +41,16 @@
       <mat-checkbox class="example-margin" style="margin-left: 10px" formControlName="checkbox">
         Czy masz dodatkowe uwagi?
       </mat-checkbox>
-      <mat-option *ngIf="taskTodo?.get('checkbox')?.value === 'true' && taskTodo?.get('attention')"></mat-option>
     </section>
 
     <mat-form-field class="example-form-field" appearance="fill"
                     *ngIf="taskTodo?.get('checkbox')?.value === true && taskTodo?.get('attention')">
-      <!--pole do wpisywania zadan-->
       <mat-label>Uwagi</mat-label>
       <input matInput type="text" formControlName="attention">
     </mat-form-field>
   </form>
   <div style="margin: 20px">
     <button mat-raised-button color="primary" style="margin-left: 10px" (click)="addClick()">Dodaj
-      zadania {{taskTodo?.get('todo')?.value}}</button>
+      zadanie {{taskTodo?.get('todo')?.value}}</button>
   </div>
 </div>
